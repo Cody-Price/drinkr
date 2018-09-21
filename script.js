@@ -11,9 +11,9 @@ function calc() {
   if (domList.children.length < 4) {
   beerNum++;
   name = nameInput.value || beerNum;
-  price = parseInt(priceInput.value);
-  abv = parseInt(abvInput.value);
-  volume = parseInt(abvInput.value);
+  price = parseFloat(priceInput.value);
+  abv = parseFloat(abvInput.value);
+  volume = parseFloat(volumeInput.value);
   tax = taxInput.value || 1;
   totalOzAlcohol = (abv * 0.01) * volume;
   totalPrice = price * tax;
@@ -47,13 +47,13 @@ domList.addEventListener('click', function(e) {
 function Card(name, totalPrice, ozAlc, alcoholPerDollar) {
   this.name = name;
   this.totalPrice = totalPrice.toFixed(2);
-  this.ozAlc = ozAlc.toFixed(1);
-  this.alcoholPerDollar = alcoholPerDollar.toFixed(1);
+  this.ozAlc = ozAlc.toFixed(2);
+  this.alcoholPerDollar = alcoholPerDollar.toFixed(2);
   this.li = document.createElement('li');
   this.li.innerHTML = `Drink: ${this.name}<br>
                        Total Price: $${this.totalPrice}<br>
                        Total oz pure alcohol: ${this.ozAlc}Oz<br>
-                       Oz pure alcohol/dollar: ${this.alcoholPerDollar}<br>
+                       ${this.alcoholPerDollar} Oz/$1.00<br>
                        <button class="delete-btn">Delete Drink</button>`
   return this.li;
 };
