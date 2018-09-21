@@ -5,7 +5,7 @@ var volumeInput = document.querySelector('.form-volume--input');
 var taxInput = document.querySelector('.form-tax--input');
 var submitBtn = document.querySelector('.submit-btn');
 var domList = document.querySelector('.dom-list');
-var beerNum = 0;
+var drinkNum = 0;
 
 nameInput.addEventListener('keyup', function() {
   checkInputs();
@@ -29,20 +29,28 @@ taxInput.addEventListener('keyup', function() {
 
 function calc() {
   if (domList.children.length < 4) {
-  beerNum++;
-  name = nameInput.value || beerNum;
+  drinkNum++;
+  name = nameInput.value || drinkNum;
   price = parseFloat(priceInput.value);
   abv = parseFloat(abvInput.value);
   volume = parseFloat(volumeInput.value);
-  tax = taxInput.value || 1;
+  tax = parseFloat(taxInput.value * 0.01) || 1;
   totalOzAlcohol = (abv * 0.01) * volume;
-  totalPrice = price * tax;
+  totalPrice = calcPrice();
   alcoholPerDollar = totalOzAlcohol / totalPrice;
   card = new Card(name, totalPrice, totalOzAlcohol, alcoholPerDollar);
-  domList.append(card);
+  domList.append(card.li);
   clearInputs();
   priceInput.focus();
   submitBtn.setAttribute('disabled', '');
+  };
+};
+
+function calcPrice() {
+  if (tax === 1) {
+    return price;
+  } else {
+    return price + price * tax;
   };
 };
 
@@ -81,8 +89,7 @@ function Card(name, totalPrice, ozAlc, alcoholPerDollar) {
   this.li = document.createElement('li');
   this.li.innerHTML = `Drink: ${this.name}<br>
                        Total Price: $${this.totalPrice}<br>
-                       Total oz pure alcohol: ${this.ozAlc}Oz<br>
-                       ${this.alcoholPerDollar} Oz/$1.00<br>
+                       Total oz pure alcohol: ${this.ozAlc}oz<br>
+                       ${this.alcoholPerDollar} oz/$<br>
                        <button class="delete-btn">Delete Drink</button>`
-  return this.li;
 };

@@ -21,6 +21,7 @@
  .r {
   font-size: 70px;
   margin-bottom: 10px;
+
  }
 
  h1 {
@@ -30,7 +31,8 @@
  .r {
   color: black;
   text-shadow: 2px 2px 5px white;
-  /*text-shadow: none;*/
+  position: relative;
+  top: 4px;
  }
 
  form {
@@ -75,9 +77,16 @@
   color: white;
  }
 
+.submit-btn:hover,
+.delete-btn:hover {
+  transform: scale(1.05, 1.05);
+  transition-duration: 0.2s;
+}
+
 .submit-btn:disabled {
   background-color: lightgrey;
   color: white;
+  transform: none;
 }
 
  form input, 
@@ -98,7 +107,7 @@
  }
 
  ul li {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   line-height: 140%;
   text-shadow: 1px 1px black;
  }
