@@ -131,6 +131,7 @@
 
   form {
     margin: 0 7px 0 0;
+    color: black;
   }
 
   .submit-btn {
@@ -160,7 +161,5 @@
     top: 10px;
     border-bottom: none;
   }
-
-
 
  }
