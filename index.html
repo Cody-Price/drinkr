@@ -12,14 +12,14 @@
     <label>Drink name</label>
     <input type="text" name="drink" placeholder="(optional)" class="form-name--input">
     <label>Price ($)</label>
-    <input type="text" name="price" class="form-price--input" placeholder="e.g. 6 = $6.00">
+    <input type="text" name="price" class="form-price--input" placeholder="e.g. 6 = $6.00" required>
     <label>ABV (%)</label>
-    <input type="text" name="abv" class="form-abv--input" placeholder="e.g. 6.7 = 6.7%">
+    <input type="text" name="abv" class="form-abv--input" placeholder="e.g. 6.7 = 6.7%" required>
     <label>Volume (drink size)</label>
-    <input type="text" name="volume" class="form-volume--input" placeholder="Oz">
+    <input type="text" name="volume" class="form-volume--input" placeholder="Oz" required>
     <label>Sales Tax (%)</label>
     <input type="text" name="tax" class="form-tax--input" placeholder="(optional)">
-    <button class="submit-btn">SUBMIT</button>
+    <button class="submit-btn" disabled>SUBMIT</button>
   </form>
   <ul class="dom-list"></ul>
 <img src="images/bubbly.gif" class="hidden">

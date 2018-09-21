@@ -68,8 +68,12 @@
  .submit-btn:active {
   background-color: red;
   color: white;
-
  }
+
+.submit-btn:disabled {
+  background-color: lightgrey;
+  color: white;
+}
 
  form input, 
  form button {

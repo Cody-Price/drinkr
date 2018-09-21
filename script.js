@@ -7,6 +7,26 @@ var submitBtn = document.querySelector('.submit-btn');
 var domList = document.querySelector('.dom-list');
 var beerNum = 0;
 
+nameInput.addEventListener('keyup', function() {
+  checkInputs();
+});
+
+priceInput.addEventListener('keyup', function() {
+  checkInputs();
+});
+
+abvInput.addEventListener('keyup', function() {
+  checkInputs();
+});
+
+volumeInput.addEventListener('keyup', function() {
+  checkInputs();
+});
+
+taxInput.addEventListener('keyup', function() {
+  checkInputs();
+});
+
 function calc() {
   if (domList.children.length < 4) {
   beerNum++;
@@ -22,6 +42,15 @@ function calc() {
   domList.append(card);
   clearInputs();
   priceInput.focus();
+  submitBtn.setAttribute('disabled', '');
+  };
+};
+
+function checkInputs() {
+  if (priceInput.value === '' || abvInput.value === '' || volumeInput.value === '') {
+    submitBtn.setAttribute('disabled', '');
+  } else {
+    submitBtn.removeAttribute('disabled', '');
   };
 };
 
