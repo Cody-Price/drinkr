@@ -1,0 +1,165 @@
+ *,
+ label,
+ ul,
+ h1 {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  /*text-shadow: 2px 1px 4px white;*/
+  color: white;
+ }
+
+ body {
+  background-image: url('../images/bubbly.gif');
+  background-image: no-repeat;
+  background-image: cover;
+  padding: 10px;
+  box-sizing: border-box;
+ }
+
+ h1,
+ .r {
+  font-size: 70px;
+  margin-bottom: 10px;
+ }
+
+ h1 {
+  text-shadow: -3px -3px black;
+ }
+
+ .r {
+  color: black;
+  text-shadow: 2px 2px 5px white;
+  /*text-shadow: none;*/
+ }
+
+ form {
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: 250px;
+ }
+
+ input {
+  width: 95%;
+  padding-left: 10px;
+  border-radius: 4px;
+  height: 25px;
+ }
+
+ form button {
+  width: 15.5%;
+  background-color: white;
+  border: 0;
+  border-radius: 2px 2px 15px 15px;
+  width: 101%;
+ }
+
+ .submit-btn {
+  margin-top: 15px;
+  padding-top: 5px;
+  height: 30px;
+  color: black;
+  border: 2px solid white;
+  border-style: ridge;
+ }
+
+ .submit-btn:active {
+  background-color: red;
+  color: white;
+
+ }
+
+ form input, 
+ form button {
+  margin: 0 0 10px 0;
+ }
+
+ .form-name--input {
+  border-radius: 15px 15px 3px 3px;
+ }
+
+ ul {
+  float: right;
+  margin-right: 15px;
+  width: 250px;
+  position: relative;
+  top: -73px;
+ }
+
+ ul li {
+  margin-bottom: 15px;
+  line-height: 140%;
+  text-shadow: 1px 1px black;
+ }
+
+ .delete-btn {
+  color: black;
+  border: none;
+  width: 146px;
+  background-color: white;
+  border-radius: 2px 0 15px 3px;
+  height: 18px;
+  margin-top: 7px;
+ }
+
+ .hidden {
+  display: none;
+ }
+
+ @media only screen and (max-width: 450px) {
+  html {
+    background: white;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fe0000;
+    background-image: none;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  h1,
+  .r {
+    font-size: 40px;
+    padding-bottom: 10px;
+  }
+
+  form {
+    margin: 0 7px 0 0;
+  }
+
+  .submit-btn {
+    width: 101%;
+  }
+
+  ul {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    position: relative;
+    top: 0;
+  }
+
+  .delete-btn {
+    border-radius: 15px;
+    width: 71%;
+    height: 25px;
+    position: relative;
+    left: -2px;
+  }
+
+  .hidden {
+    display: block;
+    width: 100%;
+    position: relative;
+    top: 10px;
+    border-bottom: none;
+  }
+
+
+
+ }
