@@ -67,9 +67,11 @@
   margin-top: 15px;
   padding-top: 5px;
   height: 30px;
-  color: black;
+  color: white;
   border: 2px solid white;
   border-style: ridge;
+  transition: 0.7s;
+  background-color: black;
  }
 
  .submit-btn:active {
@@ -99,11 +101,11 @@
  }
 
 li {
-  animation: slideIn 0.4s forwards;
+  animation: slideIn 0.7s forwards;
 }
 
  ul {
-  height: 0px;
+  /*height: 0px;*/
   float: right;
   margin-right: 15px;
   width: 250px;
@@ -113,10 +115,12 @@ li {
 
  @-webkit-keyframes slideIn {
   0% {
-    transform: translateY(-900px);
+    transform: translateX(40px);
+    opacity: 0;
   }
   100% {
-    transform: translateY(0);
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -125,6 +129,11 @@ li {
   line-height: 140%;
   text-shadow: 1px 1px black;
 
+ }
+
+ .dollar {
+  color: green;
+  text-shadow: 1px 1px white;
  }
 
  .delete-btn {
