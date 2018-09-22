@@ -98,7 +98,12 @@
   border-radius: 15px 15px 3px 3px;
  }
 
+li {
+  animation: slideIn 0.4s forwards;
+}
+
  ul {
+  height: 0px;
   float: right;
   margin-right: 15px;
   width: 250px;
@@ -106,10 +111,20 @@
   top: -73px;
  }
 
+ @-webkit-keyframes slideIn {
+  0% {
+    transform: translateY(-900px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
  ul li {
   margin-bottom: 18px;
   line-height: 140%;
   text-shadow: 1px 1px black;
+
  }
 
  .delete-btn {

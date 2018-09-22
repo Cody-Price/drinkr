@@ -1,3 +1,7 @@
+// document.addEventListener("DOMContentLoaded", function(event) { 
+//   getStorage();
+// });
+
 var nameInput = document.querySelector('.form-name--input');
 var priceInput = document.querySelector('.form-price--input');
 var abvInput = document.querySelector('.form-abv--input');
@@ -40,11 +44,23 @@ function calc() {
   alcoholPerDollar = totalOzAlcohol / totalPrice;
   card = new Card(name, totalPrice, totalOzAlcohol, alcoholPerDollar);
   domList.append(card.li);
+  storeDrink(card);
   clearInputs();
   priceInput.focus();
   submitBtn.setAttribute('disabled', '');
   };
 };
+
+function storeDrink(card) {
+  var stringyCard = JSON.stringify(card);
+  localStorage.setItem(card.name, stringyCard);
+};
+
+// function getStorage() {
+//   getCard = localStorage.getItem(card) {
+//   var renderedCard = JSON.parse(getCard);
+//   domList.append(renderedCard);
+// }
 
 function calcPrice() {
   if (tax === 1) {
